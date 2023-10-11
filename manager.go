@@ -104,16 +104,16 @@ func (m *Manager) routeEvent(event Event, c *Client) error {
 
 func (m *Manager) serveWs(w http.ResponseWriter, r *http.Request) {
 
-	otp := r.URL.Query().Get("otp")
-	if otp == "" {
-		w.WriteHeader(http.StatusUnauthorized)
-		return
-	}
+	// otp := r.URL.Query().Get("otp")
+	// if otp == "" {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	return
+	// }
 
-	if !m.otps.VerifyOTP(otp) {
-		w.WriteHeader(http.StatusUnauthorized)
-		return
-	}
+	// if !m.otps.VerifyOTP(otp) {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	return
+	// }
 
 	log.Println("new connection")
 
