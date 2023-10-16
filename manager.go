@@ -104,6 +104,9 @@ func (m *Manager) routeEvent(event Event, c *Client) error {
 
 func (m *Manager) serveWs(w http.ResponseWriter, r *http.Request) {
 
+	 w.Header().Set("Access-Control-Allow-Origin", "*")
+	 w.Header().Set("Access-Control-Allow-Methods", "*")
+
 	// otp := r.URL.Query().Get("otp")
 	// if otp == "" {
 	// 	w.WriteHeader(http.StatusUnauthorized)
