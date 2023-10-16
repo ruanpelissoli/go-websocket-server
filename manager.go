@@ -190,13 +190,14 @@ func (m *Manager) removeClient(client *Client) {
 
 // Add origins to .env
 func checkOrigin(r *http.Request) bool {
-	origin := r.Header.Get("Origin")
+	// origin := r.Header.Get("Origin")
 
-	switch origin {
-	case "http://localhost:3001":
-		//case "https://localhost:3001":
-		return true
-	default:
-		return false
-	}
+	// switch origin {
+	// case "http://localhost:3001":
+	// 	//case "https://localhost:3001":
+	// 	return true
+	// default:
+	// 	return false
+	// }
+	return true
 }

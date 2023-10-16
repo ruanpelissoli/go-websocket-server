@@ -21,9 +21,7 @@ func setupApi() {
 	manager := NewManager(ctx)
 
 	// create a hello world handler
-	http.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Server running"))
-	}))
+	http.Handle("/", http.FileServer(http.Dir("./frontend")))
 	http.HandleFunc("/ws", manager.serveWs)
 	http.HandleFunc("/login", manager.loginHandler)
 }
