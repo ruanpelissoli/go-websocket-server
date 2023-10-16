@@ -63,6 +63,8 @@ func (c *Client) readMessages() {
 			log.Printf("error unmarshalling request: %v", err)
 			break
 		}
+		
+		log.Print(string(request.Payload))
 
 		if err := c.manager.routeEvent(request, c); err != nil {
 			log.Printf("error routing event: %v", err)
